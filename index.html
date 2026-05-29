@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho 2026</title>
+    <style>
+        /* Variáveis de Cores (Paleta Verde Escuro e Amarelo) */
+        :root {
+            --verde-escuro: #1b4332;
+            --verde-medio: #2d6a4f;
+            --verde-claro: #40916c;
+            --amarelo-principal: #ffdd00;
+            --amarelo-ouro: #daa520;
+            --branco-sujeito: #f4f9f4;
+            --texto-escuro: #212529;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--branco-sujeito);
+            color: var(--texto-escuro);
+            line-height: 1.6;
+        }
+
+        /* Header / Navbar */
+        header {
+            background-color: var(--verde-escuro);
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid var(--amarelo-principal);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo-container h1 {
+            color: var(--amarelo-principal);
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .logo-container h1 span {
+            color: #fff;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 1.5rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--amarelo-principal);
+        }
+
+        /* Hero Section (Banner Principal) */
+        .hero {
+            background: linear-gradient(rgba(27, 67, 50, 0.85), rgba(45, 106, 79, 0.85)), 
+                        url('https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #fff;
+            padding: 0 1rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn-action {
+            background-color: var(--amarelo-principal);
+            color: var(--verde-escuro);
+            padding: 0.8rem 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            text-transform: uppercase;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: transform 0.2s, background-color 0.3s;
+        }
+
+        .btn-action:hover {
+            background-color: var(--amarelo-ouro);
+            transform: translateY(-2px);
+        }
+
+        /* Nova Seção: Agro Forte e Sustentável */
+        .agro-sustentavel {
+            background-color: #fff;
+            padding: 5rem 1rem;
+            border-bottom: 1px solid rgba(45, 106, 79, 0.1);
+        }
+
+        .agro-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .agro-container h2 {
+            color: var(--verde-escuro);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .agro-container h2 span {
+            color: var(--verde-claro);
+        }
+
+        .manifesto-texto {
+            font-size: 1.25rem;
+            color: #4a5568;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            position: relative;
+            font-style: italic;
+        }
+
+        .destaque-amarelo {
+            background-color: rgba(255, 221, 0, 0.2);
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            color: var(--verde-escuro);
+        }
+
+        /* Seção de Conteúdo com Imagens Realistas */
+        .conteudo {
+            max-width: 1200px;
+            margin: 5rem auto;
+            padding: 0 1rem;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--verde-escuro);
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--amarelo-principal);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .grid-plantas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+            border: 1px solid rgba(45, 106, 79, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Imagens Realistas de Plantas */
+        .card-img {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .img-1 { background-image: url('https://images.unsplash.com/photo-1463936575829-25148e1db1b8?auto=format&fit=crop&w=600&q=80'); }
+        .img-2 { background-image: url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=600&q=80'); }
+        .img-3 { background-image: url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?auto=format&fit=crop&w=600&q=80'); }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-body h3 {
+            color: var(--verde-escuro);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Rodapé */
+        footer {
+            background-color: var(--verde-escuro);
+            color: #fff;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 4px solid var(--amarelo-principal);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-container">
+            <h1>Agrinho <span>2026</span></h1>
+        </div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#manifesto">O Agro</a>
+            <a href="#projetos">Projetos</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h2>Inovação e Sustentabilidade no Campo</h2>
+        <p>Cultivando o futuro da agricultura e da educação ambiental através da tecnologia e do conhecimento.</p>
+        <a href="#manifesto" class="btn-action">Conheça Nossa Visão</a>
+    </section>
+
+    <section class="agro-sustentavel" id="manifesto">
+        <div class="agro-container">
+            <h2>Por um Agro Forte e Sustentável</h2>
+            <p class="manifesto-texto">
+                "Acreditamos na força da terra que alimenta o mundo. O verdadeiro progresso do campo acontece quando aliamos a <span class="destaque-amarelo">alta produtividade</span> com o respeito absoluto ao meio ambiente. Um agro forte é aquele que utiliza a tecnologia para otimizar colheitas, proteger a biodiversidade e garantir recursos para as próximas gerações."
+            </p>
+        </div>
+    </section>
+
+    <main class="conteudo" id="projetos">
+        <h2 class="section-title">Nossas Iniciativas</h2>
+        
+        <div class="grid-plantas">
+            <div class="card">
+                <div class="card-img img-1"></div>
+                <div class="card-body">
+                    <h3>Reflorestamento Consciente</h3>
+                    <p>Ações voltadas para a preservação de matas nativas e o equilíbrio do ecossistema local.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img img-2"></div>
+                <div class="card-body">
+                    <h3>Horta Escolar e Comunitária</h3>
+                    <p>Incentivando o cultivo de alimentos orgânicos e saudáveis diretamente nas comunidades.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img img-3"></div>
+                <div class="card-body">
+                    <h3>Botânica e Biodiversidade</h3>
+                    <p>Estudo detalhado das espécies de plantas para o desenvolvimento agrícola sustentável.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Agrinho - Todos os direitos reservados.</p>
+        <p>Desenvolvido para o Repositório do GitHub</p>
+    </footer>
+
+</body>
+</html>
